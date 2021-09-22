@@ -1,6 +1,6 @@
 var express = require("express");
-var Product = require("../models/product");
-var Review = require("../models/review");
+var Product = require("../models/Product");
+var Review = require("../models/Review");
 
 var router = express.Router();
 
