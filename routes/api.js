@@ -41,15 +41,12 @@ router.post("/product/:id/review", async (req, res) => {
   review.save();
 
   const reviews = await Review.find({ product: req.params.id });
-  console.log(reviews);
   let average = 0;
   reviews.forEach((r) => (average += r.rating));
   average = average / reviews.length;
 
   product.rating = average.toFixed(2);
   product.save();
-
-  console.log("AVERAGE RAting", average);
 
   res.json(review);
 });
